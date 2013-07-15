@@ -1,0 +1,8 @@
+  <div class="nested-fields">
+	<%= f.label 'comment' %><br />
+	<%= f.text_field :comment %><br />
+	<%= f.label 'username' %><br />
+	<%= f.text_field :username %><br />
+	<%= f.label :done %>
+	<%= link_to_remove_association 'remove review', f %>
+  </div>	

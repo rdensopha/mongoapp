@@ -1,0 +1,19 @@
+<%= form_for(@book) do |f| %>
+  
+    Title:<%= f.text_field :title %><br />
+    Pulisher:<%= f.text_field :publisher %><br />
+    Published On:<%= f.date_select :published_on %><br />
+    <%= f.label "Select Author" %>:
+    <% @authors.each do |author| %>
+      <%= f.fields_for :author, @book.author do |author_form_object| %>
+        <%= author.name %> <%= author_form_object.radio_button 'name', "#{author.name}"%>
+      <% end %>
+    <% end %>
+    
+    <%= f.fields_for :reviews do |each_review| %>
+      <%= render 'review_fields', :f => each_review %>
+    <% end %><br />
+    <%= link_to_add_association 'add review', f, :reviews %>      
+    <%= f.submit %>
+  
+<% end %>

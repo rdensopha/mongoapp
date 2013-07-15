@@ -1,0 +1,7 @@
+<%= render partial: "author_selection", collection: @authors %> 
+<%= fields_for("author", author_selection) do  |author| %>
+  <%= author_selection.name %> <%= author.radio_button 'name',"#{author_selection.name}" %>&nbsp;
+<% end %>
+<%= f.fields_for :books,@all_books do |book_selection| %>
+   <%= book_selection.object.title %><%= book_selection.check_box :title,{} %> 
+ <% end %>   

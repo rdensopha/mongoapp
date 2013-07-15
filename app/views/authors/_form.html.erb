@@ -1,0 +1,7 @@
+<h3>Edit Details of Author</h3>
+<%= form_for(@author) do |f| %>
+     Name of Author &nbsp;:&nbsp;<%= f.text_field :name %><br />
+     <h4>Books of the Author</h4>
+   <%= f.collection_check_boxes :book_ids, Book.all, :id, :title %>
+     <%= f.button :submit %>
+<% end %>

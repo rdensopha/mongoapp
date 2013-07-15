@@ -1,0 +1,2 @@
+# This file should be added to gitignore to keep the settings private
+TRUSTED_IP: 10.0.2.2
